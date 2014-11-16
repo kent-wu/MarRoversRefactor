@@ -25,49 +25,65 @@ public class Robot {
 
     private void setCurrentDirection(char change) {
         if (change == 'L') {
-            if (this.currentDirection == 'N') {
-                this.currentDirection = 'W';
-            } else if (this.currentDirection == 'S') {
-                this.currentDirection = 'E';
-            } else if (this.currentDirection == 'W') {
-                this.currentDirection = 'S';
-            } else if (this.currentDirection == 'E') {
-                this.currentDirection = 'N';
-            }
+            turnLeft();
         } else {
-            if (this.currentDirection == 'N') {
-                this.currentDirection = 'E';
-            } else if (this.currentDirection == 'S') {
-                this.currentDirection = 'W';
-            } else if (this.currentDirection == 'W') {
-                this.currentDirection = 'N';
-            } else if (this.currentDirection == 'E') {
-                this.currentDirection = 'S';
-            }
+            turnRight();
         }
     }
 
     private void move(char des) {
         if (des == 'M') {
-            if (this.currentDirection == 'N') {
-                this.y += 1;
-            } else if (this.currentDirection == 'S') {
-                this.y -= 1;
-            } else if (this.currentDirection == 'W') {
-                this.x -= 1;
-            } else if (this.currentDirection == 'E') {
-                this.x += 1;
-            }
+            moveForward();
         } else {
-            if (this.currentDirection == 'N') {
-                this.y -= 1;
-            } else if (this.currentDirection == 'S') {
-                this.y += 1;
-            } else if (this.currentDirection == 'W') {
-                this.x += 1;
-            } else if (this.currentDirection == 'E') {
-                this.x -= 1;
-            }
+            moveBack();
+        }
+    }
+
+    private void turnRight() {
+        if (this.currentDirection == 'N') {
+            this.currentDirection = 'E';
+        } else if (this.currentDirection == 'S') {
+            this.currentDirection = 'W';
+        } else if (this.currentDirection == 'W') {
+            this.currentDirection = 'N';
+        } else if (this.currentDirection == 'E') {
+            this.currentDirection = 'S';
+        }
+    }
+
+    private void turnLeft() {
+        if (this.currentDirection == 'N') {
+            this.currentDirection = 'W';
+        } else if (this.currentDirection == 'S') {
+            this.currentDirection = 'E';
+        } else if (this.currentDirection == 'W') {
+            this.currentDirection = 'S';
+        } else if (this.currentDirection == 'E') {
+            this.currentDirection = 'N';
+        }
+    }
+
+    private void moveBack() {
+        if (this.currentDirection == 'N') {
+            this.y -= 1;
+        } else if (this.currentDirection == 'S') {
+            this.y += 1;
+        } else if (this.currentDirection == 'W') {
+            this.x += 1;
+        } else if (this.currentDirection == 'E') {
+            this.x -= 1;
+        }
+    }
+
+    private void moveForward() {
+        if (this.currentDirection == 'N') {
+            this.y += 1;
+        } else if (this.currentDirection == 'S') {
+            this.y -= 1;
+        } else if (this.currentDirection == 'W') {
+            this.x -= 1;
+        } else if (this.currentDirection == 'E') {
+            this.x += 1;
         }
     }
 
