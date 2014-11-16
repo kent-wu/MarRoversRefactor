@@ -3,16 +3,13 @@ package robot;
 public class Robot {
     public static int X;
     public static int Y;
-    //position
     public int x;
     public int y;
-    //direction
     public char dir;
 
     public String control(String order) {
         char[] orders = order.toCharArray();
         for (char tmp : orders) {
-            //ת��Ϊ��д��ĸ
             tmp = Character.toUpperCase(tmp);
             if (tmp == 'L' || tmp == 'R') {
                 this.setDir(tmp);
@@ -23,7 +20,6 @@ public class Robot {
                 }
             }
         }
-        //for end
         return this.x + " " + this.y + " " + this.dir;
     }
 
@@ -53,7 +49,6 @@ public class Robot {
 
     private void move(char des) {
         if (des == 'M') {
-            //NSWE
             if (this.dir == 'N') {
                 this.y += 1;
             } else if (this.dir == 'S') {
