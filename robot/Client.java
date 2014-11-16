@@ -6,10 +6,6 @@ import java.util.regex.Pattern;
 
 public class Client {
 	public static void main(String[] args) throws Exception {
-		int initx=0;
-		int inity=0;
-		int boundaryX=0;
-		int boundaryY=0;
 		Robot r=new Robot();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
         String strBoundary = null; 
