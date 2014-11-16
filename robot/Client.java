@@ -31,7 +31,7 @@ public class Client {
 
         robot.x=Integer.parseInt(initPos[0]);
         robot.y=Integer.parseInt(initPos[1]);
-        robot.dir=Character.toUpperCase(initPos[2].charAt(0));
+        robot.currentDirection =Character.toUpperCase(initPos[2].charAt(0));
     }
 
     private static void init(BufferedReader br) throws IOException {
@@ -41,9 +41,9 @@ public class Client {
         if(!idDigit(boundaryArr[0]) || !idDigit(boundaryArr[1])){
         	System.out.println("Boundary x and y are must be digit,and input them again:");
         }
-        
-        Robot.X=Integer.parseInt(boundaryArr[0]);
-        Robot.Y=Integer.parseInt(boundaryArr[1]);
+
+        Robot.x_bound =Integer.parseInt(boundaryArr[0]);
+        Robot.y_bound =Integer.parseInt(boundaryArr[1]);
     }
 
     public static boolean idDigit(String str){
