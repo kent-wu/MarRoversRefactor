@@ -11,6 +11,8 @@ public class Robot {
     private int currentDirectionInt;
     private Map directionMap;
     public char[] direction = new char[]{'N','E','S','W'};
+    public int[] x_moves = new int[]{0,1,0,-1};
+    public int[] y_moves = new int[]{1,0,-1,0};
 
     public String control(String order) {
         char[] orders = order.toCharArray();
@@ -102,6 +104,16 @@ public class Robot {
 
     public void turnRightInt(){
         currentDirectionInt = (currentDirectionInt + 1) % 4;
+    }
+
+    public void moveForwardInt(){
+        x += x_moves[currentDirectionInt];
+        y += y_moves[currentDirectionInt];
+    }
+
+    public void moveBackInt(){
+        x -= x_moves[currentDirectionInt];
+        y -= y_moves[currentDirectionInt];
     }
 
     private boolean checkError() {
