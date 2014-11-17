@@ -1,11 +1,16 @@
 package robot;
 
+import java.util.Map;
+
 public class Robot {
     public static int x_bound;
     public static int y_bound;
     public int x;
     public int y;
     public char currentDirection;
+    private int currentDirectionInt;
+    private Map directionMap;
+    public char[] direction = new char[]{'N','E','S','W'};
 
     public String control(String order) {
         char[] orders = order.toCharArray();
@@ -29,6 +34,10 @@ public class Robot {
         } else {
             turnRight();
         }
+    }
+
+    public void setCurrentDirectionInt(int currentDirection) {
+        this.currentDirectionInt = (Integer)directionMap.get(currentDirection);
     }
 
     private void move(char des) {
