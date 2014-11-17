@@ -31,7 +31,7 @@ public class Client {
 
         robot.x=Integer.parseInt(initPos[0]);
         robot.y=Integer.parseInt(initPos[1]);
-        robot.currentDirection =Character.toUpperCase(initPos[2].charAt(0));
+        robot.setCurrentDirectionInt(Character.toUpperCase(initPos[2].charAt(0)));
     }
 
     private static void init(BufferedReader br) throws IOException {
