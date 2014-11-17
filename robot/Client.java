@@ -20,7 +20,7 @@ public class Client {
     private static void outputResult(Robot robot, BufferedReader br) throws IOException {
         System.out.println("Enter your Robot orders:");
 
-        String result=robot.controlRefactor(br.readLine());
+        String result=robot.control(br.readLine());
 
         System.out.println(result);
     }
@@ -31,7 +31,7 @@ public class Client {
 
         robot.x=Integer.parseInt(initPos[0]);
         robot.y=Integer.parseInt(initPos[1]);
-        robot.setCurrentDirectionInt(Character.toUpperCase(initPos[2].charAt(0)));
+        robot.setCurrentDirection(Character.toUpperCase(initPos[2].charAt(0)));
     }
 
     private static void init(BufferedReader br) throws IOException {
