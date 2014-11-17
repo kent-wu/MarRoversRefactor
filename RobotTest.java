@@ -18,8 +18,8 @@ public class RobotTest{
     public void should_be_1_3_N_after_excute_LMLMLMLMM(){
         robot.x = 1;
         robot.y = 2;
-        robot.currentDirection = 'N';
-        String actualResult = robot.control("LMLMLMLMM");
+        robot.setCurrentDirectionInt('N');
+        String actualResult = robot.controlRefactor("LMLMLMLMM");
         Assert.assertEquals("1 3 N",actualResult);
     }
 
@@ -27,8 +27,8 @@ public class RobotTest{
     public void should_be_3_3_E_after_excute_MMRMMRMRRM(){
         robot.x = 3;
         robot.y = 3;
-        robot.currentDirection = 'E';
-        String actualResult = robot.control("MMRMMRMRRM");
+        robot.setCurrentDirectionInt('E');
+        String actualResult = robot.controlRefactor("MMRMMRMRRM");
         Assert.assertEquals("5 1 E",actualResult);
     }
 
@@ -36,8 +36,8 @@ public class RobotTest{
     public void should_be_RIP_after_excute_MMM(){
         robot.x = 4;
         robot.y = 4;
-        robot.currentDirection = 'N';
-        String actualResult = robot.control("MMM");
+        robot.setCurrentDirectionInt('N');
+        String actualResult = robot.controlRefactor("MMM");
         Assert.assertEquals("RIP",actualResult);
     }
 
@@ -45,8 +45,8 @@ public class RobotTest{
     public void should_be_1_3_N_after_excute_MMB(){
         robot.x = 1;
         robot.y = 2;
-        robot.currentDirection = 'N';
-        String actualResult = robot.control("MMB");
+        robot.setCurrentDirectionInt('N');
+        String actualResult = robot.controlRefactor("MMB");
         Assert.assertEquals("1 3 N",actualResult);
     }
 }

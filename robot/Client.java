@@ -20,7 +20,7 @@ public class Client {
     private static void outputResult(Robot robot, BufferedReader br) throws IOException {
         System.out.println("Enter your Robot orders:");
 
-        String result=robot.control(br.readLine());
+        String result=robot.controlRefactor(br.readLine());
 
         System.out.println(result);
     }

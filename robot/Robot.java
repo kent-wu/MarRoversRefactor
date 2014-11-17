@@ -1,5 +1,6 @@
 package robot;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Robot {
@@ -14,6 +15,14 @@ public class Robot {
     public int[] x_moves = new int[]{0, 1, 0, -1};
     public int[] y_moves = new int[]{1, 0, -1, 0};
 
+    public Robot() {
+        directionMap = new HashMap();
+        directionMap.put('N',0);
+        directionMap.put('E',1);
+        directionMap.put('S',2);
+        directionMap.put('W',3);
+    }
+    
     public String control(String order) {
         char[] orders = order.toCharArray();
         for (char tmp : orders) {
@@ -64,7 +73,7 @@ public class Robot {
         }
     }
 
-    public void setCurrentDirectionInt(int currentDirection) {
+    public void setCurrentDirectionInt(char currentDirection) {
         this.currentDirectionInt = (Integer) directionMap.get(currentDirection);
     }
 
