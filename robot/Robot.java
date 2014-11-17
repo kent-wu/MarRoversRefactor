@@ -10,9 +10,9 @@ public class Robot {
     public char currentDirection;
     private int currentDirectionInt;
     private Map directionMap;
-    public char[] direction = new char[]{'N','E','S','W'};
-    public int[] x_moves = new int[]{0,1,0,-1};
-    public int[] y_moves = new int[]{1,0,-1,0};
+    public char[] direction = new char[]{'N', 'E', 'S', 'W'};
+    public int[] x_moves = new int[]{0, 1, 0, -1};
+    public int[] y_moves = new int[]{1, 0, -1, 0};
 
     public String control(String order) {
         char[] orders = order.toCharArray();
@@ -30,6 +30,32 @@ public class Robot {
         return this.x + " " + this.y + " " + this.currentDirection;
     }
 
+    public String controlRefactor(String orderString) {
+        char[] orders = orderString.toCharArray();
+        for (char order : orders) {
+            order = Character.toUpperCase(order);
+            switch (order) {
+                case 'L':
+                    turnLeftInt();
+                    break;
+                case 'R':
+                    turnRightInt();
+                    break;
+                case 'M':
+                    moveForwardInt();
+                    break;
+                case 'B':
+                    moveBackInt();
+                    break;
+            }
+            if (this.checkError()) {
+                return "RIP";
+            }
+
+        }
+        return x + " " + y + " " + direction[currentDirectionInt];
+    }
+
     private void setCurrentDirection(char change) {
         if (change == 'L') {
             turnLeft();
@@ -39,7 +65,7 @@ public class Robot {
     }
 
     public void setCurrentDirectionInt(int currentDirection) {
-        this.currentDirectionInt = (Integer)directionMap.get(currentDirection);
+        this.currentDirectionInt = (Integer) directionMap.get(currentDirection);
     }
 
     private void move(char des) {
@@ -98,20 +124,20 @@ public class Robot {
         }
     }
 
-    public void turnLeftInt(){
+    public void turnLeftInt() {
         currentDirectionInt = (currentDirectionInt + 3) % 4;
     }
 
-    public void turnRightInt(){
+    public void turnRightInt() {
         currentDirectionInt = (currentDirectionInt + 1) % 4;
     }
 
-    public void moveForwardInt(){
+    public void moveForwardInt() {
         x += x_moves[currentDirectionInt];
         y += y_moves[currentDirectionInt];
     }
 
-    public void moveBackInt(){
+    public void moveBackInt() {
         x -= x_moves[currentDirectionInt];
         y -= y_moves[currentDirectionInt];
     }
