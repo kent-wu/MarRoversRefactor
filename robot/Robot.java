@@ -96,6 +96,14 @@ public class Robot {
         }
     }
 
+    public void turnLeftInt(){
+        currentDirectionInt = (currentDirectionInt + 3) % 4;
+    }
+
+    public void turnRightInt(){
+        currentDirectionInt = (currentDirectionInt + 1) % 4;
+    }
+
     private boolean checkError() {
         if (this.x > x_bound || this.x < 0 || this.y > y_bound || this.y < 0) {
             return true;
